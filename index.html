@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Prisoner's Dilemma</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="p-8 flex flex-col min-h-screen">
+        <header class="px-8 mb-6">
+            <h1 class="text-center text-6xl mb-4">Prisoner's Dilemma Game</h1>
+            <div class="flex flex-col items-center">
+                <h2 class="text-3xl mb-2">
+                    Each round choose to either cooperate, or attack. The
+                    scoring is as follow:
+                </h2>
+                <ul class="list-disc">
+                    <li>
+                        Both players cooperate: both players receive 3 points
+                    </li>
+                    <li>
+                        One player cooperates: cooperating player receives 0
+                        points, attacking player receives 5 points
+                    </li>
+                    <li>Both players attack: both players receive 1 point</li>
+                </ul>
+            </div>
+            <img
+                class="w-1/2 min-w-[500px] mx-auto my-6"
+                src="./Screenshot 2024-08-20 141918.png"
+                alt="Points system"
+            />
+        </header>
+        <main class="flex flex-col items-center justify-around flex-grow">
+            <section class="text-center flex flex-col gap-8">
+                <h2 class="text-4xl">Choose your Computer Play style</h2>
+                <div id="comp-style" class="flex flex-wrap gap-2">
+                    <button id="random" class="btn btn-primary">Random</button>
+                    <button id="nice" class="btn btn-primary">Nice</button>
+                    <button id="fair" class="btn btn-primary">Fair</button>
+                    <button id="tough" class="btn btn-primary">
+                        Tough, but fair
+                    </button>
+                    <button id="vengeful" class="btn btn-primary">
+                        Vengeful
+                    </button>
+                    <button id="fair-vengeful" class="btn btn-primary">
+                        Fair, but vengeful
+                    </button>
+                </div>
+                <h3 class="text-3xl mb-2">
+                    Current style: <span id="current-comp-style">Random</span>
+                </h3>
+            </section>
+            <section class="flex flex-col gap-4">
+                <div class="flex gap-4 w-full justify-center">
+                    <button id="coop-btn" class="btn btn-success">
+                        Cooperate
+                    </button>
+                    <button id="attck-btn" class="btn btn-error">Attack</button>
+                </div>
+                <div id="player-badges">
+                    <div class="badge badge-primary badge-lg"></div>
+                    <div class="badge badge-primary badge-lg"></div>
+                    <div class="badge badge-primary badge-lg"></div>
+                    <div class="badge badge-primary badge-lg"></div>
+                    <div class="badge badge-primary badge-lg"></div>
+                    <div class="badge badge-primary badge-lg"></div>
+                    <div class="badge badge-primary badge-lg"></div>
+                    <div class="badge badge-primary badge-lg"></div>
+                    <div class="badge badge-primary badge-lg"></div>
+                    <div class="badge badge-primary badge-lg"></div>
+                </div>
+                <div id="comp-badges">
+                    <div class="badge badge-primary badge-lg"></div>
+                    <div class="badge badge-primary badge-lg"></div>
+                    <div class="badge badge-primary badge-lg"></div>
+                    <div class="badge badge-primary badge-lg"></div>
+                    <div class="badge badge-primary badge-lg"></div>
+                    <div class="badge badge-primary badge-lg"></div>
+                    <div class="badge badge-primary badge-lg"></div>
+                    <div class="badge badge-primary badge-lg"></div>
+                    <div class="badge badge-primary badge-lg"></div>
+                    <div class="badge badge-primary badge-lg"></div>
+                </div>
+                <div class="text-center">
+                    <p>Round: <span id="round-span">0</span></p>
+                    <p>Player Score: <span id="player-span">0</span></p>
+                    <p>Comp Score: <span id="comp-span">0</span></p>
+                </div>
+            </section>
+        </main>
+        <script src="index.js"></script>
+    </body>
+</html>
